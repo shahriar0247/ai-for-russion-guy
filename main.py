@@ -12,37 +12,30 @@ def say(say):
     engine.stop()
     print(say)
 
+def ask():
+    r = sr.Recognizer()
+    print("say something")
+    
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+    said = r.recognize_google(audio)
+    said = said.lower()
+    return said
 
 say("Hello, my name is Aygerim. I am an artificial intelligence. I am here to make an order. From which city are you from, and what is your address?")
 
-r = sr.Recognizer()
-
-with sr.Microphone() as source:
-    print("Say Something")
-    audio = r.listen(source)
-
-said = r.recognize_google(audio)
-said = said.lower()
+said = ask()
 
 say("Thank you very much. So you are from " + said + " and what would you like to order?")
 
 address = said
-with sr.Microphone() as source:
-    print("Say Something")
-    audio = r.listen(source)
 
-said = r.recognize_google(audio)
-said = said.lower()
+said = ask()
 
 say("So you are ordering " + said + " am i right?")
 order = said
 
-with sr.Microphone() as source:
-    print("Say Something")
-    audio = r.listen(source)
-
-said = r.recognize_google(audio)
-said = said.lower()
+said = ask()
 
 if said == "yes":
     say("Thank you very much")
