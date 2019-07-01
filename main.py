@@ -22,7 +22,7 @@ def ask():
     said = said.lower()
     return said
 
-say("Hello, my name is Aygerim. I am an artificial intelligence. I am here to make an order. From which city are you from, and what is your address?")
+say("Hello. My name is Aygerim. I am artificial intelligence. I am here to help you to make an order. From which city you are and what is your address?")
 
 said = ask()
 
@@ -38,6 +38,6 @@ order = said
 said = ask()
 
 if said == "yes":
-    say("Thank you very much")
+    say("Thank you very much for choosing KFC. Your order will be delivered with one and a half hours. From how much you will need a change? Okay. I got it. Thank you very much. Bye.")
 if said == "no":
     say("Please repeat the whole order")
