@@ -18,7 +18,7 @@ def ask():
     
     with sr.Microphone() as source:
         audio = r.listen(source)
-    said = r.recognize_google(audio)
+    said = r.recognize_google(audio, language="ru-RU")
     said = said.lower()
     return said
 
